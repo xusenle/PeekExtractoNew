@@ -23,21 +23,24 @@
 ## 三、项目目录结构
 
 ```js
-font_maps           # 字体映射存储点
-format_rules        # 清洗规则存储点
-text_storage        # 完整文本存储点
 src                 # 主目录
+|—— server.js       # 服务入口（Express启动）
+|—— config/         # 业务静态配置
 ├── controllers/    # 控制器：接收接口请求，调用service
-├── data/           # 数据缓存目录
-├── public/         # 前端静态页面(html/css/js)
 ├── routes/         # 路由：定义API接口地址
 ├── services/       # 业务服务层（爬虫核心逻辑）
 ├── utils/          # 工具函数
-├── server.js       # 服务入口（Express启动）
-├── .gitignore
-├── config.json     # 配置文件（json）
-├── README.md
-└── log.txt         # 日志文件
+data/               # 数据缓存目录
+|—— font_maps       # 字体映射存储点
+|—— format_rules    # 清洗规则存储点
+|—— text_storage    # 完整文本存储点
+public/             # 前端静态页面(html/css/js)
+dist/               # 构建输出（可以 .gitignore）
+log/
+|—— log.txt         # 日志文件
+.gitignore
+config.json         # 配置文件（json）
+README.md
 ```
 
 ## 四、系统核心功能

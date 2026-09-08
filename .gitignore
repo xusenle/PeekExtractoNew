@@ -1,6 +1,3 @@
-src/data/cache/**
-src/data/cacheModify/**
-font_maps/
-format_rules/
-text_storage/
-*.txt
+data/*
+log/*
+node_modules/
