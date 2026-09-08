@@ -37,7 +37,7 @@ src                 # 主目录
 ├── .gitignore
 ├── config.json     # 配置文件（json）
 ├── README.md
-└── 项目文档.md
+└── log.txt         # 日志文件
 ```
 
 ## 四、系统核心功能
