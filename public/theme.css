@@ -1,0 +1,104 @@
+:root {
+    /* 共享基色｜蓝-青-白清爽体系 */
+    --base-white: #ffffff;
+    --base-slate-1: #f8fafc;
+    --base-slate-2: #e2e8f0;
+    --base-slate-3: #cbd5e1;
+    --base-slate-4: #94a3b8;
+    --base-slate-7: #334155;
+    --base-slate-8: #1e293b;
+    --base-blue-1: #eff6ff;
+    --base-blue-5: #5b86e5;
+    /* 晴空蓝 */
+    --base-cyan-1: #ecfeff;
+    --base-cyan-3: #f0f7ff;
+    --base-cyan-5: #22D3EE;
+    /* 青色主色 */
+
+    /* ========== 业务状态色 ========== */
+    /* 默认蓝色按钮 */
+    --btn-blue-text: #ffffff;
+    --btn-blue-bgc: var(--base-blue-5);
+    --btn-blue-bd: var(--base-blue-5);
+    --btn-blue-hover-bgc: #4a72c8;
+    --btn-blue-hover-bd: #4a72c8;
+
+    /* 启动｜青色按钮 */
+    --btn-cyan-text: #ffffff;
+    --btn-cyan-bgc: var(--base-cyan-5);
+    --btn-cyan-bd: var(--base-cyan-5);
+    --btn-cyan-hover-bgc: #06b6d4;
+    --btn-cyan-hover-bd: #06b6d4;
+
+    /* 追加｜浅蓝辅助按钮（新增） */
+    --btn-append-text: var(--base-blue-5);
+    --btn-append-bgc: var(--base-blue-1);
+    --btn-append-bd: var(--base-blue-5);
+    --btn-append-hover-bgc: #dbeafe;
+    --btn-append-hover-bd: #4a72c8;
+
+    /* 停止｜红色按钮 */
+    --btn-red-text: #ffffff;
+    --btn-red-bgc: #ef4444;
+    --btn-red-bd: #ef4444;
+    --btn-red-hover-bgc: #dc2626;
+    --btn-red-hover-bd: #dc2626;
+
+    /* 暂停｜黄色按钮 */
+    --btn-yellow-text: #1e293b;
+    --btn-yellow-bgc: #facc15;
+    --btn-yellow-bd: #facc15;
+    --btn-yellow-hover-bgc: #eab308;
+    --btn-yellow-hover-bd: #eab308;
+
+    /* 成功｜绿色按钮 */
+    --btn-green-text: #ffffff;
+    --btn-green-bgc: #22c55e;
+    --btn-green-bd: #22c55e;
+    --btn-green-hover-bgc: #16a34a;
+    --btn-green-hover-bd: #16a34a;
+
+    /* 清除｜灰色次按钮 */
+    --btn-clear-text: var(--base-slate-7);
+    --btn-clear-bgc: var(--base-white);
+    --btn-clear-bd: var(--base-slate-3);
+    --btn-clear-hover-bgc: var(--base-slate-1);
+    --btn-clear-hover-bd: var(--base-slate-4);
+
+    /* 文字色系 */
+    --text-h1: var(--base-slate-8);
+    --text-h2: var(--base-slate-7);
+    --text-body: var(--base-slate-7);
+    --text-muted: var(--base-slate-4);
+    --text-primary: var(--base-blue-5);
+    --text-cyan: var(--base-cyan-5);
+
+    /* 全局背景 */
+    --body-bgc: var(--base-cyan-3);
+    --homepage-bgc: var(--base-white);
+    --homepage-bd: var(--base-slate-2);
+    --homepage-ct-bd: var(--base-slate-3);
+
+    /* textarea */
+    --textarea-bgc: var(--base-blue-1);
+    --textarea-bd: var(--base-cyan-5);
+
+    /* 导航栏 */
+    --sidebar-bg: var(--base-white);
+    --sidebar-bd: var(--base-slate-2);
+    --nav-item-icon-default: var(--base-slate-4);
+    --nav-item-bg-default: transparent;
+    --nav-item-bd-default: var(--base-slate-2);
+    --nav-item-shadow-default: none;
+    --nav-item-icon-hover: var(--base-blue-5);
+    --nav-item-bg-hover: var(--base-blue-1);
+    --nav-item-bd-hover: var(--base-blue-5);
+    --nav-item-shadow-hover: 0 2px 8px rgba(91, 134, 229, 0.12);
+    --nav-item-icon-active: var(--base-blue-5);
+    --nav-item-bg-active: var(--base-blue-1);
+    --nav-item-bd-active: var(--base-blue-5);
+    --nav-item-shadow-active: 0 4px 16px rgba(91, 134, 229, 0.25);
+
+    --progressBar-bgc: inset 0 1px 3px rgba(0, 0, 0, 0.16);
+    --progressBar-bd: 0 0 6px rgba(34, 211, 238, 0.4);
+}

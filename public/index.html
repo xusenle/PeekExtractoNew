@@ -7,13 +7,182 @@
     <title>小说爬虫</title>
     <meta name="description" content="小说爬虫">
     <meta name="keywords" content="开源小说爬虫">
+    <link rel="stylesheet" href="./theme.css">
+    <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./index.js">
-
 </head>
 
 <body>
+    <!-- 核心板块 -->
+    <div class="homepage">
+        <h1>
+            <svg class="h1-sion">
+                <use href="./svg/sprite.svg#xubibi-Spider"></use>
+            </svg>
+            网络爬虫
+        </h1>
+        <div class="text-tip text-title">批量爬取 | 字体字典 | 分页生成 | 字段过滤 | 截取内容 | 实时进度</div>
 
+        <!-- 四大板块 -->
+        <div class="homepage-pagination homepage-pagination-spider">
+            <h2 class="text-tip">
+                url生成工具
+            </h2>
+            <div class="panel-pagegen">
+                <div class="panel-pagegen-row">
+
+                    <div class="form-field">
+                        <label for="pageBaseUrl">基础URL</label>
+                        <input class="form-input form-input-url" type="text" id="pageBaseUrl" placeholder="基础URL">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="pageSuffix">分页后缀</label>
+                        <input class="form-input form-input-url" type="text" id="pageSuffix" placeholder="例:?page=">
+                    </div>
+
+                    <div class="form-field form-field--wrap">
+                        <label for="chapterOpeningPage">章节始页</label>
+                        <input class="form-input form-input-num" type="number" id="chapterOpeningPage" value="2"
+                            min="1">
+
+                        <label for="chapterEndPage">章节结页</label>
+                        <input class="form-input form-input-num" type="number" id="chapterEndPage" value="5" min="1">
+
+                        <label for="hyphen">连接符</label>
+                        <input class="form-input form-input-num" type="text" id="hyphen" placeholder="例:_">
+
+                        <label for="pageStart">起始页</label>
+                        <input class="form-input form-input-num" type="number" id="pageStart" value="2" min="1">
+
+                        <label for="pageEnd">结束页</label>
+                        <input class="form-input form-input-num" type="number" id="pageEnd" value="5" min="1">
+
+                        <label for="delayMs">爬取延时</label>
+                        <input class="form-input form-input-num" type="number" id="delayMs" value="800" min="200">
+                    </div>
+                    <!-- 进度条 -->
+                    <div class="progressBar">
+                        <div class="progressBar-barcode" id="spider-progressBar">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <button class="form-btn form-btn-primary">生成分页并追加</button>
+                        <button class="form-btn form-btn-append">自动追加</button>
+                        <button class="form-btn form-btn-clear">清除所有分页</button>
+                    </div>
+
+                </div>
+                <textarea class="form-output" name="batchUrlInput" id="batchUrlInput"
+                    placeholder="每行一个章节页网址,不确定多少页可用自动追加"></textarea>
+            </div>
+        </div>
+        <div class="homepage-pagination homepage-pagination-filter">
+            <h2 class="text-tip">
+                内容截取转换工具
+            </h2>
+            <div class="panel-pagegen">
+                <div class="form-field form-field--wrap">
+                    <label for="tagSelector">
+                        选择器
+                    </label>
+                    <label for="tagSelector">标签</label>
+                    <input class="form-input" type="radio" name="gender" id="tagSelector" checked>
+                    <label for="classNameSelector">ID</label>
+                    <input class="form-input" type="radio" name="gender" id="classNameSelector">
+                </div>
+                <div class="form-field form-field--wrap">
+                    <label for="startingTag">起始标签</label>
+                    <input class="form-input form-input-num" type="text" id="startingTag">
+
+                    <label for="endTag">结束标签</label>
+                    <input class="form-input form-input-num" type="text" id="endTag">
+
+                    <label for="classNameType">ID名称</label>
+                    <input class="form-input form-input-num" type="text" id="classNameType">
+
+                    <label for="fontDictionaryManagement">字典名称</label>
+                    <input class="form-input form-input-num" type="text" id="fontDictionaryManagement">
+
+                    <label for="fontSelect">字典选择</label>
+                    <select class="form-input form-input-num" name="fontSelect" id="fontSelect"></select>
+                </div>
+                <!-- 进度条 -->
+                <div class="progressBar">
+                    <div class="progressBar-barcode" id="flter-progressBar">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <button class="form-btn form-btn-primary">开始过滤</button>
+                    <button class="form-btn form-btn-stop">停止过滤</button>
+                    <button class="form-btn form-btn-clear">清除内容</button>
+                    <button class="form-btn form-btn-start">字典覆盖</button>
+
+                </div>
+                <div>
+                    <textarea name="" id=""></textarea>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <textarea class="form-output" name="batchUrlInput" id="batchUrlInput"></textarea>
+
+                <div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="homepage-pagination homepage-pagination-vector">
+
+        </div>
+        <div class="homepage-pagination homepage-pagination-database">
+
+        </div>
+
+    </div>
+
+
+    <!-- 侧边栏 -->
+    <nav class="sidebar">
+        <a class="sidebar-item sidebar-item-spider" href="#" aria-label="爬虫">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Spider"></use>
+            </svg>
+        </a>
+        <a class="sidebar-item sidebar-item-filter" href="#" aria-label="过滤">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Filter">
+                </use>
+            </svg>
+        </a>
+        <a class="sidebar-item sidebar-item-vector" href="#" aria-label="排版">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Vector">
+                </use>
+            </svg>
+        </a>
+        <a class="sidebar-item sidebar-item-database" href="#" aria-label="存储">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Database">
+                </use>
+            </svg>
+        </a>
+    </nav>
+
+    <script>
+        const items = document.querySelectorAll('.sidebar-item');
+        items.forEach(
+            item => {
+                item.addEventListener('click', () => {
+                    items.forEach(
+                        el => el.classList.remove('active')
+                    );
+                    item.classList.add('active')
+                })
+            }
+        )
+    </script>
 </body>
 
 </html>
