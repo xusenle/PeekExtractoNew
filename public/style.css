@@ -2,63 +2,21 @@
             background-color: var(--body-bgc);
         }
 
-        .sidebar {
-            width: 60px;
-            height: 210px;
-            background-color: var(--sidebar-bg);
-            border: 1px solid var(--sidebar-bd);
-            border-radius: 5px;
-            box-sizing: border-box;
-            position: fixed;
-            left: 2%;
-            /* 距离页面左侧距离 */
-            top: 50%;
-            transform: translateY(-50%);
-        }
 
-        .sidebar-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            fill: var(--nav-item-icon-default);
-            background-color: var(--nav-item-bg-default);
-            border: 1px solid var(--nav-item-bd-default);
-            border-radius: 5px;
-            box-sizing: border-box;
-            margin: 10px;
-        }
-
-        .sidebar-icon {
-            width: 30px;
-            height: 34px;
-        }
-
-        .sidebar-item:hover {
-            fill: var(--nav-item-icon-hover);
-            background-color: var(--nav-item-bg-hover);
-            border: 1px solid var(--nav-item-bd-hover);
-            box-shadow: var(--nav-item-shadow-hover);
-        }
-
-        .sidebar-item.active {
-            fill: var(--nav-item-icon-active);
-            background-color: var(--nav-item-bg-active);
-            border: 1px solid var(--nav-item-bd-active);
-            box-shadow: var(--nav-item-shadow-active);
-        }
 
         /* 核心板块 */
         .homepage {
-            width: 1400px;
+            /* width: 1400px;
             position: absolute;
             left: 50%;
-            transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%); */
+            width: min(1200px, 100% - 32px);
+            margin: 20px auto;
+            /* margin-left: 80px; */
         }
 
         .homepage-pagination {
-            width: 1400px;
+            width: 1200px;
             min-height: 100px;
             background-color: var(--homepage-bgc);
             border: 2px solid var(--homepage-bd);
@@ -75,7 +33,7 @@
             color: var(--text-h1);
         }
 
-        .h1-sion {
+        .h1-icon {
             width: 32px;
             height: 32px;
             fill: var(--text-primary);
@@ -91,6 +49,12 @@
         .text-title {
             font-size: 18px;
             margin-bottom: 32px;
+            color: var(--text-muted);
+        }
+
+        .text-mini {
+            font-size: 16px;
+            margin: 0 8px;
             color: var(--text-muted);
         }
 
@@ -119,6 +83,14 @@
             box-sizing: border-box;
         }
 
+        .form-radio {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--base-blue-5);
+            cursor: pointer;
+            margin: 0;
+        }
+
         .form-field {
             display: flex;
             align-items: center;
@@ -144,9 +116,11 @@
             min-width: 0;
         }
 
+
+
         /* 数字输入框固定宽度 */
         .form-input-num {
-            width: 140px;
+            width: 100px;
         }
 
         .form-output {
@@ -160,29 +134,120 @@
             box-sizing: border-box;
             resize: vertical;
             overflow: auto;
+
             /* 设置textarea的滚动条 */
             scrollbar-width: thin;
             scrollbar-color: var(--textarea-bd) var(--textarea-bgc);
             scrollbar-gutter: stable;
         }
 
+        .form-output-row {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .form-output-two {
+            flex: 1;
+        }
+
+        /* 分页器 */
+        .pagination-column {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px;
+            border: 1px solid var(--homepage-ct-bd);
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .pagination-btn-group {
+            white-space: nowrap;
+        }
+
+        .pagination-column-Number,
+        .pagination-column-size {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            white-space: nowrap;
+        }
+
+        .pagination-column-size input[type="number"] {
+            width: 84px;
+        }
+
+        .pagination-column-btn {
+            height: 30px;
+            padding: 4px 8px;
+            border: 1px solid var(--homepage-ct-bd);
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: var(--base-slate-7);
+        }
+
+
         /* 进度条样式 */
-        .progressBar {
+        .progressbar {
             width: 100%;
             height: 10px;
             background-color: var(--textarea-bgc);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--progressBar-bgc);
+            box-shadow: var(--progressbar-bgc);
         }
 
-        .progressBar-barcode {
+        .progressbar-barcode {
             height: 100%;
             width: 30%;
             background: linear-gradient(90deg, var(--base-blue-5), var(--base-cyan-5));
             border-radius: 10px;
             transition: width 0.3s ease;
-            box-shadow: var(--progressBar-bd);
+            box-shadow: var(--progressbar-bd);
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            width: 60px;
+            height: auto;
+            padding: 0;
+            background-color: var(--sidebar-bg);
+            border: 1px solid var(--sidebar-bd);
+            border-radius: 5px;
+            box-sizing: border-box;
+            position: fixed;
+            left: 8px;
+            /* 距离页面左侧距离 */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sidebar-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            fill: var(--nav-item-icon-default);
+            background-color: var(--nav-item-bg-default);
+            border: 1px solid var(--nav-item-bd-default);
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .sidebar-icon {
+            width: 30px;
+            height: 34px;
+        }
+
+        .sidebar-item:hover,
+        .sidebar-item.active {
+            fill: var(--nav-item-icon-change);
+            background-color: var(--nav-item-bg-change);
+            border: 1px solid var(--nav-item-bd-change);
         }
 
         /* 按钮标签 */
@@ -202,12 +267,14 @@
             outline-offset: 2px;
         }
 
-        .form-btn:hover {
+        .form-btn:hover,
+        .sidebar-item:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         }
 
-        .form-btn:active {
+        .form-btn:active,
+        .sidebar-item.active {
             transform: translateY(1px);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
         }
@@ -217,7 +284,9 @@
         .form-btn-start,
         .form-btn-stop,
         .form-btn-pause,
-        .form-btn-success {
+        .form-btn-success,
+        .sidebar-item,
+        .pagination-column-btn {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.25);
         }
 
@@ -225,7 +294,9 @@
         .form-btn-start:hover,
         .form-btn-stop:hover,
         .form-btn-pause:hover,
-        .form-btn-success:hover {
+        .form-btn-success:hover,
+        .sidebar-item:hover,
+        .pagination-column-btn:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.25);
         }
 
@@ -233,7 +304,9 @@
         .form-btn-start:active,
         .form-btn-stop:active,
         .form-btn-pause:active,
-        .form-btn-success:active {
+        .form-btn-success:active,
+        .sidebar-item.active,
+        .pagination-column-btn:active {
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(0, 0, 0, 0.08);
         }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -10,14 +10,40 @@
     <link rel="stylesheet" href="./theme.css">
     <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./index.js">
 </head>
 
 <body>
+    <!-- 侧边栏 -->
+    <nav class="sidebar">
+        <button type="button" class="sidebar-item sidebar-item-spider" aria-label="爬虫">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Spider"></use>
+            </svg>
+        </button>
+        <button type="button" class="sidebar-item sidebar-item-filter" aria-label="过滤">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Filter">
+                </use>
+            </svg>
+        </button>
+        <button type="button" class="sidebar-item sidebar-item-vector" aria-label="排版">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Vector">
+                </use>
+            </svg>
+        </button>
+        <button type="button" class="sidebar-item sidebar-item-database" aria-label="存储">
+            <svg class="sidebar-icon">
+                <use href="./svg/sprite.svg#xubibi-Database">
+                </use>
+            </svg>
+        </button>
+    </nav>
+
     <!-- 核心板块 -->
     <div class="homepage">
         <h1>
-            <svg class="h1-sion">
+            <svg class="h1-icon">
                 <use href="./svg/sprite.svg#xubibi-Spider"></use>
             </svg>
             网络爬虫
@@ -25,6 +51,7 @@
         <div class="text-tip text-title">批量爬取 | 字体字典 | 分页生成 | 字段过滤 | 截取内容 | 实时进度</div>
 
         <!-- 四大板块 -->
+        <!-- ui生成工具 -->
         <div class="homepage-pagination homepage-pagination-spider">
             <h2 class="text-tip">
                 url生成工具
@@ -63,14 +90,14 @@
                         <input class="form-input form-input-num" type="number" id="delayMs" value="800" min="200">
                     </div>
                     <!-- 进度条 -->
-                    <div class="progressBar">
-                        <div class="progressBar-barcode" id="spider-progressBar">
+                    <div class="progressbar">
+                        <div class="progressbar-barcode" id="spider-progressbar">
                         </div>
                     </div>
                     <div class="form-field">
-                        <button class="form-btn form-btn-primary">生成分页并追加</button>
-                        <button class="form-btn form-btn-append">自动追加</button>
-                        <button class="form-btn form-btn-clear">清除所有分页</button>
+                        <button type="button" class="form-btn form-btn-primary">生成分页并追加</button>
+                        <button type="button" class="form-btn form-btn-append">自动追加</button>
+                        <button type="button" class="form-btn form-btn-clear">清除所有分页</button>
                     </div>
 
                 </div>
@@ -78,21 +105,21 @@
                     placeholder="每行一个章节页网址,不确定多少页可用自动追加"></textarea>
             </div>
         </div>
+
+        <!-- 内容截取转换工具 -->
         <div class="homepage-pagination homepage-pagination-filter">
             <h2 class="text-tip">
                 内容截取转换工具
             </h2>
             <div class="panel-pagegen">
                 <div class="form-field form-field--wrap">
-                    <label for="tagSelector">
-                        选择器
-                    </label>
+                    <span class="form-label">选择器</span>
                     <label for="tagSelector">标签</label>
-                    <input class="form-input" type="radio" name="gender" id="tagSelector" checked>
+                    <input class="form-radio" type="radio" name="selectorType" id="tagSelector" checked>
                     <label for="classNameSelector">ID</label>
-                    <input class="form-input" type="radio" name="gender" id="classNameSelector">
-                </div>
-                <div class="form-field form-field--wrap">
+                    <input class="form-radio" type="radio" name="selectorType" id="classNameSelector">
+
+
                     <label for="startingTag">起始标签</label>
                     <input class="form-input form-input-num" type="text" id="startingTag">
 
@@ -107,68 +134,172 @@
 
                     <label for="fontSelect">字典选择</label>
                     <select class="form-input form-input-num" name="fontSelect" id="fontSelect"></select>
+
                 </div>
                 <!-- 进度条 -->
-                <div class="progressBar">
-                    <div class="progressBar-barcode" id="flter-progressBar">
+                <div class="progressbar">
+                    <div class="progressbar-barcode" id="filter-progressbar">
                     </div>
                 </div>
 
                 <div class="form-field">
-                    <button class="form-btn form-btn-primary">开始过滤</button>
-                    <button class="form-btn form-btn-stop">停止过滤</button>
-                    <button class="form-btn form-btn-clear">清除内容</button>
-                    <button class="form-btn form-btn-start">字典覆盖</button>
-
+                    <button type="button" class="form-btn form-btn-primary">开始过滤</button>
+                    <button type="button" class="form-btn form-btn-stop">停止过滤</button>
+                    <button type="button" class="form-btn form-btn-clear">清除内容</button>
+                    <button type="button" class="form-btn form-btn-pause">字典覆盖</button>
+                    <button type="button" class="form-btn form-btn-start">保存字典</button>
+                    <button type="button" class="form-btn form-btn-append">导入字典</button>
+                    <button type="button" class="form-btn form-btn-clear">删除字典</button>
                 </div>
-                <div>
-                    <textarea name="" id=""></textarea>
-                    <textarea name="" id=""></textarea>
+                <div class="form-output-row">
+                    <!-- 字典显示 -->
+                    <textarea class="form-output form-output-two" name="dictionarySettings"
+                        id="dictionarySettings"></textarea>
+                    <!-- 过滤日志显示 -->
+                    <textarea class="form-output form-output-two" name="conversionLog" id="conversionLog"
+                        readonly></textarea>
                 </div>
-                <textarea class="form-output" name="batchUrlInput" id="batchUrlInput"></textarea>
+                <textarea class="form-output" name="dictionaryFilteringContent"
+                    id="dictionaryFilteringContent"></textarea>
 
-                <div>
-
+                <!-- 分页器 -->
+                <div class="pagination-column">
+                    <!-- 总条数 -->
+                    <div class="text-mini">
+                        共 <strong>200</strong> 条
+                    </div>
+                    <!-- 页码 -->
+                    <div class="pagination-btn-group">
+                        <button type="button" class="pagination-column-btn form-btn-append ">上一页</button>
+                        <span class="text-mini">.....</span>
+                        <button type="button" class="pagination-column-btn form-btn-append ">下一页</button>
+                    </div>
+                    <!-- 每页条数 + 跳转 -->
+                    <div class="pagination-column-Number">
+                        <div>
+                            <label class="text-mini" for="filter-pageCountOption">每页</label>
+                            <select class="pagination-column-btn" name="filter-pageCountOption"
+                                id="filter-pageCountOption">
+                                <option value="10">10条</option>
+                                <option value="20">20条</option>
+                                <option value="50">50条</option>
+                                <option value="100">100条</option>
+                            </select>
+                        </div>
+                        <div class="pagination-column-size">
+                            <label class="text-mini" for="filter-pageJump">跳至</label>
+                            <input class="pagination-column-btn" type="number" name="filter-pageJump"
+                                id="filter-pageJump" min="1" placeholder="页码">
+                            <button type="button" class="pagination-column-btn form-btn-append">确定</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
+        <!-- 排版工具 -->
         <div class="homepage-pagination homepage-pagination-vector">
+            <h2 class="text-tip">
+                排版工具
+            </h2>
+            <div class="panel-pagegen">
+                <div class="form-field form-field--wrap">
+                    <label for="ruleName">规则名称</label>
+                    <input class="form-input form-input-num" type="text" id="ruleName">
 
+                    <label for="ruleChoice">规则选择</label>
+                    <select class="form-input form-input-num" name="ruleChoice" id="ruleChoice"></select>
+
+
+                </div>
+                <div class="form-field">
+                    <label for="filteringRules">过滤规则</label>
+                    <input class="form-input form-input-url" type="text" id="filteringRules" placeholder="过滤关键词 | 分开">
+                </div>
+                <div class="form-field">
+                    <button type="button" class="form-btn form-btn-primary">开始过滤</button>
+                    <button type="button" class="form-btn form-btn-stop">停止过滤</button>
+                    <button type="button" class="form-btn form-btn-start">保存规则</button>
+                    <button type="button" class="form-btn form-btn-append">导入规则</button>
+                    <button type="button" class="form-btn form-btn-clear">删除规则</button>
+                </div>
+
+                <!-- 进度条 -->
+                <div class="progressbar">
+                    <div class="progressbar-barcode" id="vector-progressbar">
+                    </div>
+                </div>
+
+                <textarea class="form-output" name="typesettingDocument" id="typesettingDocument"></textarea>
+                <!-- 分页器 -->
+                <div class="pagination-column">
+                    <!-- 总条数 -->
+                    <div class="text-mini">
+                        共 <strong>200</strong> 条
+                    </div>
+                    <!-- 页码 -->
+                    <div class="pagination-btn-group">
+                        <button type="button" class="pagination-column-btn form-btn-append ">上一页</button>
+                        <span class="text-mini">.....</span>
+                        <button type="button" class="pagination-column-btn form-btn-append ">下一页</button>
+                    </div>
+                    <!-- 每页条数 + 跳转 -->
+                    <div class="pagination-column-Number">
+                        <div>
+                            <label class="text-mini" for="vector-pageCountOption">每页</label>
+                            <select class="pagination-column-btn" name="vector-pageCountOption"
+                                id="vector-pageCountOption">
+                                <option value="10">10条</option>
+                                <option value="20">20条</option>
+                                <option value="50">50条</option>
+                                <option value="100">100条</option>
+                            </select>
+                        </div>
+                        <div class="pagination-column-size">
+                            <label class="text-mini" for="vector-pageJump">跳至</label>
+                            <input class="pagination-column-btn" type="number" name="vector-pageJump"
+                                id="vector-pageJump" min="1" placeholder="页码">
+                            <button type="button" class="pagination-column-btn form-btn-append">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="homepage-pagination homepage-pagination-database">
 
+        <!-- 文本存储导出工具 -->
+        <div class="homepage-pagination homepage-pagination-database">
+            <h2 class="text-tip">
+                文本存储导出工具
+            </h2>
+            <div class="panel-pagegen">
+                <div class="form-field form-field--wrap">
+                    <label for="documentName">文档名称</label>
+                    <input class="form-input form-input-num" type="text" id="documentName">
+
+                    <label for="documentSelection">文档选择</label>
+                    <select class="form-input form-input-num" name="documentSelection" id="documentSelection"></select>
+
+                </div>
+                <div class="form-field">
+                    <button type="button" class="form-btn form-btn-primary">导入文档</button>
+                    <button type="button" class="form-btn form-btn-stop">停止导入</button>
+                    <button type="button" class="form-btn form-btn-start">导出文档</button>
+                    <button type="button" class="form-btn form-btn-stop">停止导出</button>
+                    <button type="button" class="form-btn form-btn-clear">删除文档</button>
+                </div>
+                <!-- 进度条 -->
+                <div class="progressbar">
+                    <div class="progressbar-barcode" id="database-progressbar">
+                    </div>
+                </div>
+                <textarea class="form-output" name="integratedDocument" id="integratedDocument"></textarea>
+            </div>
         </div>
 
     </div>
 
 
-    <!-- 侧边栏 -->
-    <nav class="sidebar">
-        <a class="sidebar-item sidebar-item-spider" href="#" aria-label="爬虫">
-            <svg class="sidebar-icon">
-                <use href="./svg/sprite.svg#xubibi-Spider"></use>
-            </svg>
-        </a>
-        <a class="sidebar-item sidebar-item-filter" href="#" aria-label="过滤">
-            <svg class="sidebar-icon">
-                <use href="./svg/sprite.svg#xubibi-Filter">
-                </use>
-            </svg>
-        </a>
-        <a class="sidebar-item sidebar-item-vector" href="#" aria-label="排版">
-            <svg class="sidebar-icon">
-                <use href="./svg/sprite.svg#xubibi-Vector">
-                </use>
-            </svg>
-        </a>
-        <a class="sidebar-item sidebar-item-database" href="#" aria-label="存储">
-            <svg class="sidebar-icon">
-                <use href="./svg/sprite.svg#xubibi-Database">
-                </use>
-            </svg>
-        </a>
-    </nav>
+
 
     <script>
         const items = document.querySelectorAll('.sidebar-item');
