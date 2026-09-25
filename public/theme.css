@@ -94,11 +94,13 @@
     --nav-item-bg-change: var(--base-blue-1);
     --nav-item-bd-change: var(--base-blue-5);
 
-    /* 阴影特效 */
-    /* 页面高光默认 */
-
-
     /* 进度条样式 */
     --progressBar-bgc: inset 0 1px 3px rgba(0, 0, 0, 0.16);
     --progressBar-bd: 0 0 6px rgba(34, 211, 238, 0.4);
+
+    /* 实心按钮统一高光效果 */
+
+    --button-box: 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    --button-box-hover: 0 4px 8px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    --button-box-active: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(0, 0, 0, 0.08);
 }

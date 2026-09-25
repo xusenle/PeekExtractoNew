@@ -287,7 +287,7 @@
         .form-btn-success,
         .sidebar-item,
         .pagination-column-btn {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: var(--button-box);
         }
 
         .form-btn-primary:hover,
@@ -297,7 +297,7 @@
         .form-btn-success:hover,
         .sidebar-item:hover,
         .pagination-column-btn:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: var(--button-box-hover);
         }
 
         .form-btn-primary:active,
@@ -307,7 +307,7 @@
         .form-btn-success:active,
         .sidebar-item.active,
         .pagination-column-btn:active {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(0, 0, 0, 0.08);
+            box-shadow: var(--button-box-active);
         }
 
         .form-btn-primary {
